@@ -1,0 +1,7 @@
+﻿  test.cpp
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Lab 5\Header.h(121): warning C4715: 'List<int>::insertBefore': not all control paths return a value
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Lab 5\Header.h(88): warning C4715: 'List<int>::insertAfter': not all control paths return a value
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Lab 5\Header.h(223): warning C4715: 'List<int>::removeBefore': not all control paths return a value
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Lab 5\Header.h(189): warning C4715: 'List<int>::removeAfter': not all control paths return a value
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Lab 5\Header.h(155): warning C4715: 'List<int>::remove': not all control paths return a value
+  Lab 5.vcxproj -> C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Lab 5\x64\Debug\Lab 5.exe

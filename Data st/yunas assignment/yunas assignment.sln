@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "yunas assignment", "yunas assignment.vcxproj", "{80D43221-4ADA-4109-ADD8-3641C856503B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80D43221-4ADA-4109-ADD8-3641C856503B}.Debug|x64.ActiveCfg = Debug|x64
+		{80D43221-4ADA-4109-ADD8-3641C856503B}.Debug|x64.Build.0 = Debug|x64
+		{80D43221-4ADA-4109-ADD8-3641C856503B}.Debug|x86.ActiveCfg = Debug|Win32
+		{80D43221-4ADA-4109-ADD8-3641C856503B}.Debug|x86.Build.0 = Debug|Win32
+		{80D43221-4ADA-4109-ADD8-3641C856503B}.Release|x64.ActiveCfg = Release|x64
+		{80D43221-4ADA-4109-ADD8-3641C856503B}.Release|x64.Build.0 = Release|x64
+		{80D43221-4ADA-4109-ADD8-3641C856503B}.Release|x86.ActiveCfg = Release|Win32
+		{80D43221-4ADA-4109-ADD8-3641C856503B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5CC5D06-BFE3-4F4B-8001-E0DF27DCABC4}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+﻿  Task3_L1.cpp
+  Task4_L1.cpp
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sharara123\Task4_L1.cpp(12,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sharara123\Task4_L1.cpp(20): warning C4715: 'discountedvalue': not all control paths return a value
+  Sharara123.vcxproj -> C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sharara123\x64\Debug\Sharara123.exe

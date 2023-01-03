@@ -1,0 +1,581 @@
+#pragma once
+#include<iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <sstream>
+#include"Queue.h"
+using namespace std;
+
+
+class Node
+{
+public:
+	string data;
+	Node* next;
+	int distance;
+
+	Node()
+	{
+		data = "\0";
+		next = NULL;
+	}
+
+	Node(string d, int di)
+	{
+		data = d;
+		distance = di;
+		next = NULL;
+	}
+
+	Node(string d, Node* n)
+	{
+		data = d;
+		next = n;
+	}
+
+	Node(string d)
+	{
+		data = d;
+		next = NULL;
+	}
+
+	//void setData(T d)
+	//{
+	//	data = d;
+	//}
+
+
+	string getData()
+	{
+		return data;
+	}
+
+	Node* getNext()
+	{
+		return next;
+	}
+
+};
+
+
+
+class AdjList
+{
+public:
+	Node* head;
+
+	AdjList()
+	{
+		head = NULL;
+	}
+
+	void insert(string a,int dist)
+	{
+
+		if (head == NULL)
+		{
+			Node* current_node = new Node(a,dist);
+			head = current_node;
+		}
+
+		else
+		{
+			Node* current_node = new Node;
+			current_node = head;
+
+			while (current_node->next)
+			{
+				current_node = current_node->next;
+			}
+
+			Node* N = new Node(a,dist);
+			current_node->next = N;
+			current_node->next->next = NULL;
+
+		}
+	}
+
+	void deletenode(string val)
+	{
+		if (head == NULL)
+		{
+			return;
+		}
+		else if (head->data == val)
+		{
+			Node* current_node = new Node;
+			current_node = head;
+			head = head->next;
+			delete current_node;
+			return;
+		}
+		else
+		{
+			Node* current_node = new Node();
+			current_node = head;
+			while (current_node->next)
+			{
+				if (current_node->next->data == val)
+				{
+					Node* Deletenode = current_node->next;
+					current_node->next = current_node->next->next;
+					delete Deletenode;
+					return;
+				}
+				current_node = current_node->next;
+			}
+			return;
+		}
+	}
+
+	string print()
+	{
+		Node* current_node = head;
+		string returnlist=current_node->data+": ";
+	
+		while (current_node->next)
+		{
+			returnlist += "-> ";
+			returnlist += current_node->next->data;
+			current_node = current_node->next;
+		}
+
+		return returnlist;
+	}
+
+};
+
+
+class Graph
+{
+public:
+	int maxVertices;
+	int noOfVertices;
+	AdjList* list = NULL;
+	int** AdjMatrix;
+
+
+	Graph()
+	{
+		maxVertices = 26;
+		noOfVertices = 0;
+		list = new AdjList[26];
+		AdjMatrix = new int* [maxVertices];
+		for (int i = 0; i < maxVertices; i++)
+		{
+			AdjMatrix[i] = new int[maxVertices];
+		}
+	}
+
+
+	Graph(int maxVer)
+	{
+		maxVertices = maxVer;
+		noOfVertices = 0;
+		list = new AdjList[maxVertices];
+		AdjMatrix = new int* [maxVertices];
+		for (int i = 0; i < maxVertices; i++)
+		{
+			AdjMatrix[i] = new int[maxVertices];
+		}
+
+	}
+
+	Graph addnode(string val)
+	{
+		list[noOfVertices].insert(val, 0);
+		noOfVertices++;
+		return *this;
+	}
+
+	void addEdge1(string src, string dest, int d)
+	{
+		for (int i = 0; i < noOfVertices; i++)
+		{
+			if (list[i].head->data == src)
+				list[i].insert(dest, d);
+
+		}
+
+	}
+
+	void addEdge(string src, string dest, int d)
+	{
+		for (int i = 0; i < noOfVertices; i++)
+		{
+			if (list[i].head->data == src)
+				list[i].insert(dest, d);
+
+			else if (list[i].head->data == dest)
+				list[i].insert(src, d);
+		}
+
+	}
+
+	void deleteNode(string ci)
+	{
+		for (int i = 0; i < noOfVertices; i++)
+		{
+			if(list[i].head->data==ci)
+			{
+				list[i].head = NULL;
+			}
+		}
+
+		for (int i = 0; i < noOfVertices; i++)
+		{
+			list[i].deletenode(ci);
+		}
+
+	}
+
+	void printGraph()
+	{
+		for (int i = 0; i < noOfVertices; i++)
+		{
+			if(list[i].head!=NULL)
+				list[i].print();
+		}
+	}
+
+	string printsingleLink(string city)
+	{
+		string cehc;
+		for(int i=0 ; i<noOfVertices;i++)
+		{
+			if (list[i].head != NULL)
+			{
+				if (list[i].head->data == city)
+				{
+					cehc = list[i].print();
+					cout << cehc << endl;
+					return cehc;
+				}
+
+			}
+								
+		}
+	}
+
+	void deleteEdge(string src, string dest)
+	{
+		for (int i = 0; i < noOfVertices; i++)
+		{
+			if (list[i].head->data == src)
+			{
+				list[i].deletenode(dest);
+			}
+			if (list[i].head->data == dest)
+			{
+				list[i].deletenode(src);
+			}
+
+		}
+	}
+
+
+};
+
+
+int** ReadFromFile(string fname, string cities[])
+{
+
+	int** AdjMatrix = new int* [25];
+
+	for (int i = 0; i < 25; i++)
+	{
+		AdjMatrix[i] = new int[25];
+	}
+
+	vector<vector<string>> content;
+	vector<string> row;
+	string line, word;
+
+	fstream file("GraphData.csv", ios::in);
+	if (file.is_open())
+	{
+		while (getline(file, line))
+		{
+			row.clear();
+
+			stringstream str(line);
+
+			while (getline(str, word, ','))
+				row.push_back(word);
+			content.push_back(row);
+		}
+	}
+	else
+		cout << "Could not open the file\n";
+
+
+	int c = 0;
+	for (int i = 1; i < content.size(); i++)
+	{
+		cities[c] = content[i][0];
+		c++;
+	}
+
+
+	int x = 0;
+	int y = 0;
+	for (int i = 1; i < content.size(); i++)
+	{
+		y = 0;
+
+		for (int j = 1; j < content.size(); j++)
+		{
+			AdjMatrix[x][y] = stoi(content[j][i]);
+
+			y++;
+		}
+		x++;
+	}
+
+	return AdjMatrix;
+}
+	
+int findmin(int* D,int V)
+{
+	int mini=D[V];
+	int temp=D[V];
+	for (int i = 0; i < 25 ; i++)
+	{
+		if (temp >= D[i])
+		{
+			temp = D[i];
+			mini = i;
+		}
+	}
+
+	return mini;
+}
+
+
+void shortestPathfromOnetoall(string val,string cities[],int** am)
+{
+	Queue<string> Q;
+	Queue<string> visited;
+	string current_city;
+	int Distance[25];
+	int initial_Distance[25];
+	int Visited_count = 0;
+	int city_Num;
+	string parent[25];
+
+	for (int i = 0; i < 25; i++)
+	{
+		initial_Distance[i] = 10000;
+	}
+
+	for (int i = 0; i < 25; i++)
+	{
+		if (cities[i] == val)
+		{
+			Distance[i] = 0;
+			initial_Distance[i] = 0;
+			break;
+		}
+	}
+	
+	
+	
+
+	for (int i = 0; i < 25 ; i++)
+	{
+		Q.Enqueue(cities[i]);
+	}
+
+
+	while (Q.count!=0)
+	{
+		
+		city_Num=findmin(initial_Distance,Visited_count);
+		Distance[city_Num] = initial_Distance[city_Num];
+		visited.Enqueue(Q.searchDequeue(cities[city_Num]));
+			for (int i = 0; i < 25; i++)
+			{
+				if (am[city_Num][i] != 0)
+				{
+					if (!visited.citysearch(cities[i]))
+					{
+						if (initial_Distance[i] > am[city_Num][i] + Distance[city_Num])
+						{
+							initial_Distance[i] = am[city_Num][i] + Distance[city_Num];
+							parent[i] = cities[city_Num];
+						}
+					}
+				}
+			}
+			initial_Distance[city_Num] = 20000; // To limit that one city with minimum value doesn't get selected again
+
+	}
+
+	cout << "Shortest Distances From " << val << " To all Other Cities is : " << endl;
+
+	
+	int pn = 0;
+	int k = 0;
+	for (int i = 0; i < 25; i++)
+	{
+		k = i;
+		pn = 0;
+		if (Distance[i] == 10000)
+		{
+			cout <<"\n\n"<< cities[i] << " -> " << "NO PATH " << endl;
+		}
+		else
+		{
+			cout << "\n\n";
+ 			while (parent[k]!="")
+			{
+				if (parent[k] == val)
+				{
+					cout<< parent[k] ;
+					break;
+				}
+					
+				if (parent[k] == cities[pn])
+				{
+					cout << parent[k] << " <- ";
+					k = pn;
+					pn = 0;
+				}
+				pn++;
+			}
+
+			cout <<"\n"<< cities[i] << " -> " << Distance[i] << endl;
+		}
+
+	}
+
+}
+
+
+
+string ShortestRoutefrompair(string src, string dest, string cities[], int** am)
+{
+	Queue<string> Q;
+	Queue<string> visited;
+	string current_city;
+	int Distance[25];
+	int initial_Distance[25];
+	int Visited_count = 0;
+	int city_Num;
+	string parent[25];
+
+	for (int i = 0; i < 25; i++)
+	{
+		initial_Distance[i] = 10000;
+	}
+
+	for (int i = 0; i < 25; i++)
+	{
+		if (cities[i] == src)
+		{
+			Distance[i] = 0;
+			initial_Distance[i] = 0;
+			break;
+		}
+	}
+
+	for (int i = 0; i < 25; i++)
+	{
+		Q.Enqueue(cities[i]);
+	}
+
+
+	while (Q.count != 0)
+	{
+
+		city_Num = findmin(initial_Distance, Visited_count);
+		if (cities[city_Num] == dest)
+		{
+			break;
+		}
+		Distance[city_Num] = initial_Distance[city_Num];
+		visited.Enqueue(Q.searchDequeue(cities[city_Num]));
+		for (int i = 0; i < 25; i++)
+		{
+			if (am[city_Num][i] != 0)
+			{
+				if (!visited.citysearch(cities[i]))
+				{
+					if (initial_Distance[i] > am[city_Num][i] + Distance[city_Num])
+					{
+						initial_Distance[i] = am[city_Num][i] + Distance[city_Num];
+						parent[i] = cities[city_Num];
+					}
+				}
+			}
+		}
+		initial_Distance[city_Num] = 20000; // To limit that one city with minimum value doesn't get selected again
+
+	}
+
+	cout << "The Shortest Distance From " << src << " To " << dest << " IS : " << endl;
+
+	int pn = 0;
+	int k = 0;
+	int destination = 0;
+	bool flag = false;
+	string returnstr="\0";
+
+	for (int i = 0; i < 25; i++)
+	{
+		if (cities[i] == dest)
+		{
+			destination = i;
+			break;
+		}
+	}
+
+	for (int i = destination; i <= destination; i++)
+	{
+		k = i;
+		pn = 0;
+		if (Distance[i] == 10000)
+		{
+			cout << "\n\n" << cities[i] << " -> " << "NO PATH " << endl;
+		}
+		else
+		{
+			cout << "\n";
+			while (parent[k] != "")
+			{
+				if (parent[k] == src)
+				{
+					returnstr =  parent[k] + returnstr;
+					flag = true;
+					break;
+				}
+
+				if (parent[k] == cities[pn])
+				{
+					returnstr = "-> " + parent[k] + returnstr;
+					k = pn;
+					pn = 0;
+					flag = true;
+				}
+				pn++;
+			}
+
+			if (flag) {
+				returnstr = returnstr + "-> " + cities[i];
+				cout << returnstr << endl;
+			}
+
+			else
+			{
+				cout << "No Path" << endl;
+				return "No Path";
+			}
+		}
+
+	}
+
+
+	return returnstr;
+}
+

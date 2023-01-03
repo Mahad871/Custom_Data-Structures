@@ -1,0 +1,39 @@
+﻿  test.cpp
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(29,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(29,3): error C2146: syntax error: missing ';' before identifier 'smaller'
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(29,21): error C2143: syntax error: missing ';' before '{'
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(29,21): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(58,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(58,1): error C2086: 'int T': redefinition
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(29): message : see declaration of 'T'
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(58,3): error C2146: syntax error: missing ';' before identifier 'concatenateArrays'
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(58,57): error C2143: syntax error: missing ';' before '{'
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(58,57): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(5,5): error C2672: 'smaller': no matching overloaded function found
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(5,5): error C2780: 'T smaller(T,T,T)': expects 3 arguments - 2 provided
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(9): message : see declaration of 'smaller'
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(5,5): error C2660: 'testing::internal::EqHelper<false>::Compare': function does not take 3 arguments
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.5\build\native\include\gtest\gtest.h(1481,26): message : see declaration of 'testing::internal::EqHelper<false>::Compare'
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(5,5): error C2737: 'gtest_ar': const object must be initialized
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(8,5): error C2672: 'smaller': no matching overloaded function found
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(8,5): error C2780: 'T smaller(T,T,T)': expects 3 arguments - 2 provided
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(9): message : see declaration of 'smaller'
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(8,5): error C2660: 'testing::internal::EqHelper<false>::Compare': function does not take 3 arguments
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.5\build\native\include\gtest\gtest.h(1481,26): message : see declaration of 'testing::internal::EqHelper<false>::Compare'
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(8,5): error C2737: 'gtest_ar': const object must be initialized
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(9,5): error C2672: 'smaller': no matching overloaded function found
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(9,5): error C2780: 'T smaller(T,T,T)': expects 3 arguments - 2 provided
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(9): message : see declaration of 'smaller'
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(9,5): error C2660: 'testing::internal::EqHelper<false>::Compare': function does not take 3 arguments
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.5\build\native\include\gtest\gtest.h(1481,26): message : see declaration of 'testing::internal::EqHelper<false>::Compare'
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(9,5): error C2737: 'gtest_ar': const object must be initialized
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(18,5): error C2672: 'smaller': no matching overloaded function found
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(18,5): error C2780: 'T smaller(T,T,T)': expects 3 arguments - 2 provided
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\Header.h(9): message : see declaration of 'smaller'
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(18,5): error C2660: 'testing::internal::EqHelper<false>::Compare': function does not take 3 arguments
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Project1\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.5\build\native\include\gtest\gtest.h(1481,26): message : see declaration of 'testing::internal::EqHelper<false>::Compare'
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(18,5): error C2737: 'gtest_ar': const object must be initialized
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(47,18): error C2065: 'concatenateArrays': undeclared identifier
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(47,36): error C2062: type 'int' unexpected
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(58,19): error C2065: 'concatenateArrays': undeclared identifier
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Sample-Test1\test.cpp(58,37): error C2062: type 'char' unexpected

@@ -1,0 +1,6 @@
+﻿  Source.cpp
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Discrete Structures Project\Graph.h(504,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Discrete Structures Project\Graph.h(540,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Discrete Structures Project\Graph.h(543,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Discrete Structures Project\Graph.h(549,20): warning C4018: '<': signed/unsigned mismatch
+  Discrete Structures Project.vcxproj -> C:\Users\msasd\OneDrive\Desktop\Vs Code\Semester 3\Data st\Discrete Structures Project\x64\Debug\Discrete Structures Project.exe
